@@ -1,0 +1,22 @@
+{
+  "name": "shd-cli",
+  "version": "0.0.1",
+  "description": "studio hyperdrive CLI",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Kevin Decock",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "shelljs": "^0.8.1"
+  },
+  "bin": {
+    "shd": "bin/index.js"
+  },
+  "devDependencies": {
+    "@studiohyperdrive/eslint-config": "^3.0.1",
+    "eslint": "^4.19.1"
+  }
+}
