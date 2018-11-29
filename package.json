@@ -1,7 +1,7 @@
 {
-  "name": "shd-cli",
+  "name": "overlap-cli",
   "version": "0.0.1",
-  "description": "studio hyperdrive CLI",
+  "description": "overlap CLI",
   "main": "bin/index.js",
   "scripts": {
     "test": "test"
@@ -13,7 +13,7 @@
     "shelljs": "^0.8.1"
   },
   "bin": {
-    "shd": "bin/index.js"
+    "overlap": "bin/index.js"
   },
   "devDependencies": {
     "@studiohyperdrive/eslint-config": "^3.0.1",
