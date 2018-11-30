@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 program
-	.version("0.0.1")
+	.version("0.0.2")
 	.option("-c, --convert [input]", "Convert model to dae")
 	.option("-f --format [format]", "Specify the output format [format]", "dae")
 	.option("-e, --eslint", "Add eslint config")
