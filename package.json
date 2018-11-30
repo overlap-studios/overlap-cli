@@ -7,8 +7,12 @@
     "test": "test",
     "postinstall": "chmod a+x assimp/assimp-overlap"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com:overlap-studios/overlap-cli.git"
+  },
   "author": "Overlap Studios",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "commander": "^2.15.1",
     "shelljs": "^0.8.1"
