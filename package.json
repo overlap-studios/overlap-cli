@@ -1,6 +1,6 @@
 {
   "name": "overlap-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "overlap CLI",
   "main": "bin/index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "postinstall": "chmod a+x assimp/assimp-overlap"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com:overlap-studios/overlap-cli.git"
+    "type": "git",
+    "url": "https://github.com:overlap-studios/overlap-cli.git"
   },
   "author": "Overlap Studios",
   "license": "MIT",
