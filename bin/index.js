@@ -35,8 +35,6 @@ if (program.convert) {
 	shell.exec(`rm -rf overlap-temp`);
 }
 
-
-
 if (program.eslint) {
 	console.log("Adding our ESLINT configuration");
 
