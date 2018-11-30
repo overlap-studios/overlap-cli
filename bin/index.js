@@ -8,6 +8,7 @@ const path = require("path");
 program
 	.version("0.0.1")
 	.option("-c, --convert [input]", "Convert model to dae [model]", "model")
+	.option("-f --format [format]", "Specify the output format [format]", "dae")
 	.option("-e, --eslint", "Add eslint config")
 	.parse(process.argv);
 
@@ -15,15 +16,25 @@ program
 if (program.convert) {
 	const input = program.convert;
 	const inputWithoutExtension = input.split(".")[0];
+	const assimpPath = path.resolve(__dirname, "../assimp/assimp-overlap");
+	// make a temp directory
+	shell.exec("mkdir overlap-temp");
 
-	console.log("converting your input model to a .dae file");
-	// convert the model to something we can work with
-	shell.exec(`assimp export ${input} ${inputWithoutExtension}.dae`);
+	console.log(`converting your input model to a ${program.format} file`);
+	// convert the model to DAE so we can fix paths
+	shell.exec(`${assimpPath} export ${input} overlap-temp/overlap-temp-model.dae`);
 
 	// if the model was created on windows, swap out all the backslashes with foreward slashes for unix use
-	const script = `sed -i "" 's.\\\\./.g' ${inputWithoutExtension}.dae`;
+	const script = `sed -i "" 's.\\\\./.g' overlap-temp/overlap-temp-model.dae`;
 	shell.exec(script);
+
+	// export the model to specified format
+	shell.exec(`${assimpPath} export overlap-temp/overlap-temp-model.dae ${inputWithoutExtension}.${program.format}`);
+
+	// remove the temp folder
+	shell.exec(`rm -rf overlap-temp`);
 }
+
 
 
 if (program.eslint) {

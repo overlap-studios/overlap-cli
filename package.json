@@ -4,7 +4,8 @@
   "description": "overlap CLI",
   "main": "bin/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "postinstall": "chmod a+x assimp/assimp-overlap"
   },
   "author": "Kevin Decock",
   "license": "ISC",
